@@ -61,7 +61,7 @@ body {
 }
 
 .scroll-shadow--show {
-  animation: scroll-shadow 3s ease-out 1 forwards;
+  animation: scroll-shadow 2s ease-out 1 forwards;
 }
 
 @keyframes scroll-shadow {
