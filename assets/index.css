@@ -1,0 +1,50 @@
+/*
+ * reset部分
+ */
+body {
+  margin: 0;
+}
+
+/*
+ * 公用样式
+ */
+#main {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-image: url("../assets/image/背景.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.nav-home {
+  height: 16vw;
+  cursor: pointer;
+}
+
+.first-letter-capital::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* line-height: 1 */
+.lh1 {
+  line-height: 1;
+}
+.lh9 {
+  line-height: 0.9;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* 链接样式 */
+.link {
+  text-decoration: none;
+  transition: color 0.1s;
+}
+
+.link:hover {
+  /* color: lightseagreen; */
+}

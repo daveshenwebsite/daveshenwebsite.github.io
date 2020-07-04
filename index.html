@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dave Shen</title>
+  <link rel="stylesheet" href="./assets/index.css" />
+  <style>
+    .menu {
+      margin: 0 0;
+      padding-top: 2vh;
+      padding-left: 0.3em;
+      font-size: 11vw;
+      list-style: none;
+    }
+
+    .menu-item {
+      line-height: 0.8;
+      margin: 0 0;
+    }
+
+    .menu-item--shop {
+      /* margin-top: -0.1em; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 3vw;
+      align-self: flex-end;
+    }
+
+    .menu-item-link,
+    .nav-icon {
+      cursor: pointer;
+    }
+
+    .nav-icon {
+      vertical-align: middle;
+    }
+
+    .nav-about {
+      width: 20vw;
+      margin-left: -4vw;
+      vertical-align: text-top;
+    }
+
+    .menu-item-link {
+      background-size: 100% 100%;
+      color: transparent;
+      display: inline-block;
+      /* 这里有个bug：a区域溢出，回头继续排查 */
+      overflow: hidden;
+    }
+
+    .menu-item-link::selection {
+      color: transparent;
+    }
+
+    .menu-item-link-work {
+      background-image: url(./assets/label/work.svg);
+    }
+    .menu-item-link-concept {
+      background-image: url(./assets/label/concept.svg);
+    }
+    .menu-item-link-about {
+      background-image: url(./assets/label/about.svg);
+    }
+    .menu-item-link-shop {
+      background-image: url(./assets/label/shop.svg);
+    }
+  </style>
+</head>
+
+<body>
+  <main id="main">
+    <ul class="menu">
+      <li class="menu-item">
+        <a class="menu-item-link menu-item-link-work" href="./work.html" title="work">WORK</a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-item-link menu-item-link-concept" href="./concept.html" title="concept">CONCEPT</a>
+      </li>
+      <li class="menu-item menu-item--about">
+        <a class="menu-item-link menu-item-link-about" href="./about.html" title="about">ABOUT</a>
+        <a class="nav-icon menu-item-link" style="overflow: visible;" href="/about.html" title="about">
+          <img class="nav-about" src="./assets/image/gif/3.gif" />
+        </a>
+      </li>
+      <li class="menu-item menu-item--shop">
+        <a class="nav-icon menu-item-link" href="/" title="shop">
+          <img class="nav-home" src="./assets/image/gif/1.gif" />
+        </a>
+        <a class="menu-item-link menu-item-link-shop" href="/shop.html" title="shop">SHOP</a>
+      </li>
+    </ul>
+  </main>
+</body>
+
+</html>

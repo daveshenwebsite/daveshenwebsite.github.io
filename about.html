@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dave Shen</title>
+  <link rel="stylesheet" href="./assets/index.css" />
+  <style>
+    #main {
+      padding-left: 0.8em;
+      font-size: 4vw;
+      box-sizing: border-box;
+    }
+
+    .about {
+      margin-top: 0em;
+    }
+
+    .about-text {
+      font-family: "圆体-简";
+    }
+
+    .boy-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .about,
+    .about-item-boy,
+    .education {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .about-item-boy {
+      line-height: 0.7;
+    }
+
+    .dave {
+      width: 35vw;
+      height: auto;
+      margin-left: 40px;
+      margin-top: -1.5em;
+      mask-image: linear-gradient(to bottom, transparent 0, black 10%);
+      -webkit-mask-image: url('./assets/gradient.png');
+      mask-origin: 0 0;
+      -webkit-mask-origin: 0 0;
+      mask-size: 100% 100%;
+      -webkit-mask-size: 100% 100%;
+    }
+
+    .nav-home {
+      margin-top: 10vw;
+    }
+
+    .nav-contact {
+      width: 30vw;
+      margin-left: 10vw;
+      margin-top: -5vh;
+    }
+
+    .about-item-contact {
+      font-size: 3vw;
+      font-weight: bold;
+      line-height: 0.78;
+    }
+
+    .about-item-contact a {
+      text-decoration: none;
+      color: black;
+      transition: color .1s;
+    }
+
+    .about-item-contact a:hover {
+      color: lightseagreen;
+    }
+
+    .text-transform {
+      transform: scaleY(0.75);
+    }
+  </style>
+</head>
+
+<body>
+  <main id="main">
+    <ul class="about">
+      <div class="about-text">
+        <li class="about-item text-transform first-letter-capital">Dave Shen （Shen Sheng 申盛）</li>
+        <li class="about-item text-transform first-letter-capital lh9">Illustration（Digital art）&</li>
+        <li class="about-item text-transform" style="line-height: 0.9; margin-top: -0.4em;">Graphic Design</li>
+        <li class="about-item text-transform lh9">
+          <p style="display: inline-block; text-align: justify; margin: 0.5em 0;">
+            Learning in the UK
+            <br />
+            DMU<span style="float: right;">BFA</span>
+          </p>
+        </li>
+        <li class="about-item boy-section lh9">
+          <ul class="about-item-boy">
+            <li class="text-transform">GEEK BOY</li>
+            <li class="about-item text-transform">DIGITAL BOY</li>
+            <li class="about-item text-transform">COMIC BOY</li>
+            <li class="about-item text-transform">PRINT BOY</li>
+            <li class="about-item text-transform">SILLY BOY</li>
+            <li class="about-item text-transform">SMILE BOY</li>
+            <li class="about-item text-transform">AIRBRUSH ART BOY</li>
+            <li class="about-item text-transform">Sci-Fi BOY</li>
+            <li class="about-item text-transform">Graphic Design</li>
+            <li class="about-item text-transform">
+              <p>TOKUSATSU BO<b>Y</b></p>
+            </li>
+            <li class="about-item text-transform">to be continued</li>
+          </ul>
+          <img class="dave" src="./assets/image/Dave.png" title="Dave Shen" />
+          <a href="/index.html">
+            <img class="nav-home" src="./assets/image/gif/1.gif" title="home" />
+          </a>
+        </li>
+      </div>
+
+      <li class="about-item lh9 about-item-contact">INS:
+        <a class="pointer" href="https://www.instagram.com/daveshen198/"
+          title="DaveShen (@daveshen198) · Instagram 照片和视频">daveshen198</a>
+      </li>
+      <li class="about-item lh9 about-item-contact">WEIBO:
+        <a class="pointer" href="https://weibo.com/u/3593617602" title="atom戴夫的微博">atom戴夫</a>
+      </li>
+      <li class="about-item lh9 about-item-contact">MAIL:
+        <a class="pointer" href="mailto://sshen7681@gmail.com" title="sshen7681@gmail.com">sshen7681@gmail.com</a>
+      </li>
+      <li class="about-item lh9 about-item-contact">WECHAT:
+        <a class="pointer" title="Boomdave" onclick="javescript:void(0)">Boomdave</a>
+      </li>
+    </ul>
+    <a href="/index.html">
+      <img class="nav-home" src="./assets/image/gif/1.gif" title="home" />
+    </a>
+    <img class="nav-contact pointer" src="./assets/image/gif/2.gif" title="contact" />
+  </main>
+</body>
+
+</html>

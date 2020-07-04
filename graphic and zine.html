@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dave Shen</title>
+  <link rel="stylesheet" href="./assets/index.css" />
+  <style>
+    .image-list {
+      list-style: none;
+      padding-left: 0;
+      overflow: hidden;
+    }
+
+    #preview {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 5vh 0;
+      box-sizing: border-box;
+      display: none;
+      text-align: center;
+      overflow-y: scroll;
+    }
+
+    .preview-main {
+      width: 80vw;
+      height: 90vh;
+      overflow-y: scroll;
+      margin: 0vh 10vw;
+      box-shadow: 0 0 60px 60px white;
+      background-color: white;
+    }
+
+    .preview-image {
+      position: relative;
+      width: 48%;
+      z-index: 1;
+      transition: all 0.5s;
+      will-change: width, right, top, transform, z-index;
+    }
+
+    /*
+     * 两个的布局
+     */
+    .preview-main--2 {
+      position: relative;
+      line-height: 0;
+    }
+
+    .preview-main--2 .preview-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: 100% 0;
+    }
+
+    .preview-main--2 .preview-image--current {
+      position: absolute;
+      right: 6%;
+      width: 94%;
+      margin-top: 5%;
+      z-index: 2;
+    }
+
+    /*
+     * 四的布局
+     */
+    .preview-main--4 {
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .preview-main--4 .preview-image:nth-child(1),
+    .preview-main--4 .preview-image:nth-child(2) {
+      margin-bottom: 4%;
+    }
+
+    .preview-main--4 .preview-image--current {
+      transform: scale(2.09);
+      z-index: 2;
+    }
+    .preview-main--4 .preview-image--not-current {
+      z-index: 0;
+    }
+
+    .preview-main--4 .preview-image--1 {
+      transform-origin: 0 0;
+    }
+    .preview-main--4 .preview-image--2 {
+      transform-origin: 100% 0;
+    }
+    .preview-main--4 .preview-image--3 {
+      transform-origin: 0 100%;
+    }
+    .preview-main--4 .preview-image--4 {
+      transform-origin: 100% 100%;
+    }
+
+    /* .preview-image--current {
+      transform: scale(1.8);
+      z-index: 2;
+    }
+
+    .preview-image--1 {
+      transform-origin: 0 0;
+    }
+
+    .preview-image--2 {
+      transform-origin: 100% 0;
+    } */
+
+    img {
+      cursor: pointer;
+    }
+
+    figure {
+      margin: 1%;
+    }
+
+    figure img {
+      width: 100%;
+    }
+
+    h3,
+    p {
+      margin: 0;
+      font-family: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 1.7vw;
+    }
+
+    p {
+      font-size: 1.5vw;
+      line-height: 0.8;
+      margin: 0.3em 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="main">
+    <ul class="image-list">
+      <li class="image-item" style="display: flex; justify-content: space-between; width: 88%;">
+        <figure class="heads-figure">
+          <img loading="lazy" src="./assets/image/zine/HARBIN SNOW & ICE FESTIVAL.jpg"
+            title="HARBIN SNOW & ICE FESTIVAL" alt="HARBIN SNOW & ICE FESTIVAL" />
+          <figcaption>
+            <h3>HARBIN SNOW & ICE FESTIVAL</h3>
+          </figcaption>
+        </figure>
+        <figure class="heads-figure">
+          <img loading="lazy" src="./assets/image/zine/HMV SHOP POSTER.jpg" title="HMV SHOP POSTER"
+            alt="HMV SHOP POSTER" />
+          <figcaption>
+            <h3 style="text-align: right;">"HMV SHOP POSTER"</h3>
+          </figcaption>
+        </figure>
+        <figure class="heads-figure">
+          <img loading="lazy" src="./assets/image/zine/HMW MUSIC LIVE SHOW.jpg" title="HMW MUSIC LIVE SHOW"
+            alt="HMW MUSIC LIVE SHOW" />
+          <figcaption>
+            <h3>"HMW MUSIC LIVE SHOW"</h3>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="image-item">
+        <figure>
+          <img onclick="showPreview(this)" data-folder="BEHAVIOUR" data-count="2"
+            style="width: 60%; float: left; margin-right: 0.5%; margin-top: 2em;" loading="lazy"
+            src="./assets/image/zine/BEHAVIOUR.jpg" title="BEHAVIOUR" alt="BEHAVIOUR" />
+          <figcaption>
+            <p>2019</p>
+            <h3>BEHAVIOUR</h3>
+            <p>This is a zine based on my childhood
+              relationship with toys, exploring the
+              subtle subservience, equality and
+              inequality between me and my toys.</p>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="image-item">
+        <figure style="margin-left: 0; margin-top: 10%; text-align: right;">
+          <img onclick="showPreview(this)" data-folder="WIZARD DREAM" data-count="4" style="width: 39%; float: right;"
+            loading="lazy" src="./assets/image/zine/WIZARD DREAM.jpg" title="WIZARD DREAM" alt="WIZARD DREAM" />
+          <figcaption>
+            <h3 style="padding-top: calc(39% - 1em); padding-right: calc(39% + 0.5em);">TRIP</h3>
+            <p style="display: inline-block; clear: both; text-align: left;">
+              A dream journey about me, but also a record
+              <br />
+              of a hard time in reality, a world filled with inorganic life,
+              <br />
+              I seem to be moving forward for a certain goal.
+            </p>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="image-item">
+        <figure style="margin-left: 5%; display: flex; align-items: flex-end;">
+          <img onclick="showPreview(this)" data-folder="SPRING HEELJACK" data-count="2"
+            style="width: 32%; vertical-align: text-bottom;" loading="lazy"
+            src="./assets/image/zine/SPRING HEELJACK/1.jpg" title="SPRING HEELJACK" alt="SPRING HEELJACK" />
+          <figcaption style="flex: 1; margin-left: 0.5em;">
+            <p>
+              About an English Victorian urban legend-Spring
+              <br />
+              Heeled Jack-I've reworked the story to bring the
+              <br />
+              legend to life.
+            </p>
+            <h3>SPRING HEELED JACK</h3>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li class="image-item">
+        <figure style="text-align: center; margin-top: 5%; font-size: 1.7vw;">
+          <figcaption style="width: 40%; margin: 0 auto; text-align: left;">
+            <p>It's a compilation of three zine：</p>
+            <h3>TRIP</h3>
+            <h3>SPRING HEELED JACK</h3>
+            <h3>QUI</h3>
+          </figcaption>
+          <img onclick="showPreview(this)" data-folder="compilation" data-count="2"
+            style="width: 40%; margin-top: -1em; padding-left: 4em; box-sizing: border-box;" loading="lazy"
+            src="./assets/image/zine/compilation/1.JPG" title="compilation" alt="compilation" />
+        </figure>
+      </li>
+    </ul>
+    <div id="preview" onclick="hidePreview(this, event)"></div>
+  </main>
+  <script>
+    var preview = document.getElementById('preview')
+    var container = createContainer()
+    var currentClassName = 'preview-image--current'
+    var notCurrentClassName = 'preview-image--not-current'
+    var indexFor4Image = 1
+
+    function showPreview(el) {
+      var count = parseInt(el.dataset.count)
+      var folder = el.dataset.folder
+
+      container.innerHTML = ''
+
+      var images = getImages(folder, count)
+      images.forEach(function (el) {
+        container.appendChild(el)
+      })
+
+      container.classList.remove('preview-main--' + container.dataset.count)
+      container.classList.add('preview-main--' + count)
+      container.dataset.count = count
+      container.onclick = function (e) {
+        var target = e.target
+        if (target.nodeName !== 'IMG') return
+
+        if (images.length === 4) {
+          images.forEach(function (image) {
+            if (image !== target) {
+              image.classList.remove(currentClassName)
+              image.classList.add(notCurrentClassName)
+            } else {
+              image.classList.remove(notCurrentClassName)
+              image.classList[target.classList.contains(currentClassName) ?
+                'remove' : 'add'
+              ](currentClassName)
+            }
+          })
+          return
+        }
+
+        images.forEach(function (image) {
+          if (image.dataset.index === target.dataset.index) {
+            image.classList.add(currentClassName)
+          } else {
+            image.classList.remove(currentClassName)
+          }
+        })
+      }
+
+      preview.appendChild(container)
+      preview.style.display = 'block'
+      preview.scrollTop = 0
+    }
+
+    document.body.addEventListener('keyup', function (e) {
+      if (e.code === 'Escape') {
+        hidePreview()
+      }
+    })
+
+    function hidePreview(target, e) {
+      if (!target || target === e.target) {
+        preview.style.display = 'none'
+      }
+    }
+
+    function createContainer() {
+      var container = document.createElement('div')
+      container.classList.add('preview-main')
+      return container
+    }
+
+    function getImages(folder, count) {
+      return new Array(count)
+        .fill(0)
+        .map(function (_, i) {
+          var el = document.createElement('img')
+          el.src = './assets/image/zine/' + folder + '/' + (i + 1) + '.jpg'
+          el.dataset.index = i + 1
+          el.classList.add('preview-image')
+          el.classList.add('preview-image--' + (i + 1))
+          if (count === 2 && i === 0) {
+            el.classList.add('preview-image--current')
+          }
+          return el
+        })
+    }
+  </script>
+</body>
+
+</html>
