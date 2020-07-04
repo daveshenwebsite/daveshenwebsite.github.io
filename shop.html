@@ -105,19 +105,20 @@
       </li>
     </ul>
     <div id="comming-soon">COMMING SOON.........</div>
-    <script>
-      var comming = document.getElementById('comming-soon')
-      function previewImage(e) {
-        var target = e.target
-        if (target.nodeName !== 'IMG') return // 非图片元素
-
-        comming.classList.add('comming-animation')
-        comming.addEventListener('animationend', function () {
-          comming.classList.remove('comming-animation')
-        })
-      }
-    </script>
   </main>
+  <script>
+    var comming = document.getElementById('comming-soon')
+    function previewImage(e) {
+      var target = e.target
+      if (target.nodeName !== 'IMG') return // 非图片元素
+
+      comming.classList.add('comming-animation')
+      comming.addEventListener('animationend', function () {
+        comming.classList.remove('comming-animation')
+      })
+    }
+  </script>
+  <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
