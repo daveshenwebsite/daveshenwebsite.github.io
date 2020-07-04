@@ -34,6 +34,15 @@
       cursor: pointer;
     }
 
+    .menu-item-link-text {
+      transition: transform 0.2s;
+    }
+
+    .menu-item-link-text:hover {
+      transform: scale(1.2);
+      transform-origin: 50% 50%;
+    }
+
     .nav-icon {
       vertical-align: middle;
     }
@@ -75,13 +84,13 @@
   <main id="main">
     <ul class="menu">
       <li class="menu-item">
-        <a class="menu-item-link menu-item-link-work" href="./work.html" title="work">WORK</a>
+        <a class="menu-item-link menu-item-link-text menu-item-link-work" href="./work.html" title="work">WORK</a>
       </li>
       <li class="menu-item">
-        <a class="menu-item-link menu-item-link-concept" href="./concept.html" title="concept">CONCEPT</a>
+        <a class="menu-item-link menu-item-link-text menu-item-link-concept" href="./concept.html" title="concept">CONCEPT</a>
       </li>
       <li class="menu-item menu-item--about">
-        <a class="menu-item-link menu-item-link-about" href="./about.html" title="about">ABOUT</a>
+        <a class="menu-item-link menu-item-link-text menu-item-link-about" href="./about.html" title="about">ABOUT</a>
         <a class="nav-icon menu-item-link" style="overflow: visible;" href="/about.html" title="about">
           <img class="nav-about" src="./assets/image/gif/3.gif" />
         </a>
@@ -90,7 +99,7 @@
         <a class="nav-icon menu-item-link" href="/" title="shop">
           <img class="nav-home" src="./assets/image/gif/1.gif" />
         </a>
-        <a class="menu-item-link menu-item-link-shop" href="/shop.html" title="shop">SHOP</a>
+        <a class="menu-item-link menu-item-link-text menu-item-link-shop" href="/shop.html" title="shop">SHOP</a>
       </li>
     </ul>
 
