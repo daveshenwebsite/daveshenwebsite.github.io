@@ -26,11 +26,8 @@ function showBottomShadow() {
 
 detectScrollToBottom()
 
-;(function () {
-    var images = document.querySelectorAll('img')
-    Array.from(images).forEach(function (image) {
-        image.addEventListener('contextmenu', function (e) {
+    ; (function () {
+        document.body.addEventListener('contextmenu', function (e) {
             e.preventDefault()
-        })
-    })
-})()
+        }, true)
+    })()
