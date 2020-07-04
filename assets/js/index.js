@@ -26,8 +26,10 @@ function showBottomShadow() {
 
 detectScrollToBottom()
 
-    ; (function () {
-        document.body.addEventListener('contextmenu', function (e) {
-            e.preventDefault()
-        }, true)
-    })()
+var touchPreventTimeout;
+
+; (function () {
+    document.body.addEventListener('contextmenu', function (e) {
+        e.preventDefault()
+    })
+})()

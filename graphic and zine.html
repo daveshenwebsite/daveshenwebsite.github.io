@@ -24,6 +24,7 @@
       display: none;
       text-align: center;
       overflow-y: scroll;
+      z-index: 10;
     }
 
     .preview-main {
@@ -86,6 +87,7 @@
       transform: scale(2.09);
       z-index: 2;
     }
+
     .preview-main--4 .preview-image--not-current {
       z-index: 0;
     }
@@ -93,28 +95,18 @@
     .preview-main--4 .preview-image--1 {
       transform-origin: 0 0;
     }
+
     .preview-main--4 .preview-image--2 {
       transform-origin: 100% 0;
     }
+
     .preview-main--4 .preview-image--3 {
       transform-origin: 0 100%;
     }
+
     .preview-main--4 .preview-image--4 {
       transform-origin: 100% 100%;
     }
-
-    /* .preview-image--current {
-      transform: scale(1.8);
-      z-index: 2;
-    }
-
-    .preview-image--1 {
-      transform-origin: 0 0;
-    }
-
-    .preview-image--2 {
-      transform-origin: 100% 0;
-    } */
 
     img {
       cursor: pointer;
@@ -152,22 +144,28 @@
     <ul class="image-list">
       <li class="image-item" style="display: flex; justify-content: space-between; width: 88%;">
         <figure class="heads-figure">
-          <img loading="lazy" src="./assets/image/zine/HARBIN SNOW & ICE FESTIVAL.jpg"
-            title="HARBIN SNOW & ICE FESTIVAL" alt="HARBIN SNOW & ICE FESTIVAL" />
+          <div class="image-container">
+            <img loading="lazy" src="./assets/image/zine/HARBIN SNOW & ICE FESTIVAL.jpg"
+              title="HARBIN SNOW & ICE FESTIVAL" alt="HARBIN SNOW & ICE FESTIVAL" />
+          </div>
           <figcaption>
             <h3>HARBIN SNOW & ICE FESTIVAL</h3>
           </figcaption>
         </figure>
         <figure class="heads-figure">
-          <img loading="lazy" src="./assets/image/zine/HMV SHOP POSTER.jpg" title="HMV SHOP POSTER"
-            alt="HMV SHOP POSTER" />
+          <div class="image-container">
+            <img loading="lazy" src="./assets/image/zine/HMV SHOP POSTER.jpg" title="HMV SHOP POSTER"
+              alt="HMV SHOP POSTER" />
+          </div>
           <figcaption>
             <h3 style="text-align: right;">"HMV SHOP POSTER"</h3>
           </figcaption>
         </figure>
         <figure class="heads-figure">
-          <img loading="lazy" src="./assets/image/zine/HMW MUSIC LIVE SHOW.jpg" title="HMW MUSIC LIVE SHOW"
-            alt="HMW MUSIC LIVE SHOW" />
+          <div class="image-container">
+            <img loading="lazy" src="./assets/image/zine/HMW MUSIC LIVE SHOW.jpg" title="HMW MUSIC LIVE SHOW"
+              alt="HMW MUSIC LIVE SHOW" />
+          </div>
           <figcaption>
             <h3>"HMW MUSIC LIVE SHOW"</h3>
           </figcaption>
@@ -175,9 +173,10 @@
       </li>
       <li class="image-item">
         <figure>
-          <img onclick="showPreview(this)" data-folder="BEHAVIOUR" data-count="2"
-            style="width: 60%; float: left; margin-right: 0.5%; margin-top: 2em;" loading="lazy"
-            src="./assets/image/zine/BEHAVIOUR.jpg" title="BEHAVIOUR" alt="BEHAVIOUR" />
+          <div class="image-container" style="width: 60%; float: left; margin-right: 0.5%; margin-top: 2em;"
+            onclick="showPreview(this)" data-folder="BEHAVIOUR" data-count="2">
+            <img loading="lazy" src="./assets/image/zine/BEHAVIOUR.jpg" title="BEHAVIOUR" alt="BEHAVIOUR" />
+          </div>
           <figcaption>
             <p>2019</p>
             <h3>BEHAVIOUR</h3>
@@ -190,8 +189,10 @@
       </li>
       <li class="image-item">
         <figure style="margin-left: 0; margin-top: 10%; text-align: right;">
-          <img onclick="showPreview(this)" data-folder="WIZARD DREAM" data-count="4" style="width: 39%; float: right;"
-            loading="lazy" src="./assets/image/zine/WIZARD DREAM.jpg" title="WIZARD DREAM" alt="WIZARD DREAM" />
+          <div class="image-container" onclick="showPreview(this)" data-folder="WIZARD DREAM" data-count="4"
+            style="width: 39%; float: right;">
+            <img loading="lazy" src="./assets/image/zine/WIZARD DREAM.jpg" title="WIZARD DREAM" alt="WIZARD DREAM" />
+          </div>
           <figcaption>
             <h3 style="padding-top: calc(39% - 1em); padding-right: calc(39% + 0.5em);">TRIP</h3>
             <p style="display: inline-block; clear: both; text-align: left;">
@@ -206,9 +207,11 @@
       </li>
       <li class="image-item">
         <figure style="margin-left: 5%; display: flex; align-items: flex-end;">
-          <img onclick="showPreview(this)" data-folder="SPRING HEELJACK" data-count="2"
-            style="width: 32%; vertical-align: text-bottom;" loading="lazy"
-            src="./assets/image/zine/SPRING HEELJACK/1.jpg" title="SPRING HEELJACK" alt="SPRING HEELJACK" />
+          <div class="image-container" onclick="showPreview(this)" data-folder="SPRING HEELJACK" data-count="2"
+            style="width: 32%; vertical-align: text-bottom;">
+            <img loading="lazy" src="./assets/image/zine/SPRING HEELJACK/1.jpg" title="SPRING HEELJACK"
+              alt="SPRING HEELJACK" />
+          </div>
           <figcaption style="flex: 1; margin-left: 0.5em;">
             <p>
               About an English Victorian urban legend-Spring
@@ -230,9 +233,10 @@
             <h3>SPRING HEELED JACK</h3>
             <h3>QUI</h3>
           </figcaption>
-          <img onclick="showPreview(this)" data-folder="compilation" data-count="2"
-            style="width: 40%; margin-top: -1em; padding-left: 4em; box-sizing: border-box;" loading="lazy"
-            src="./assets/image/zine/compilation/1.jpg" title="compilation" alt="compilation" />
+          <div class="image-container" onclick="showPreview(this)" data-folder="compilation" data-count="2"
+            style="width: 40%; margin-top: -1em; padding-left: 4em; box-sizing: border-box;">
+            <img loading="lazy" src="./assets/image/zine/compilation/1.jpg" title="compilation" alt="compilation" />
+          </div>
         </figure>
       </li>
     </ul>
@@ -261,7 +265,7 @@
       container.dataset.count = count
       container.onclick = function (e) {
         var target = e.target
-        if (target.nodeName !== 'IMG') return
+        if (!target.classList.contains('image-container')) return
 
         if (images.length === 4) {
           images.forEach(function (image) {
@@ -314,15 +318,18 @@
       return new Array(count)
         .fill(0)
         .map(function (_, i) {
-          var el = document.createElement('img')
-          el.src = './assets/image/zine/' + folder + '/' + (i + 1) + '.jpg'
-          el.dataset.index = i + 1
-          el.classList.add('preview-image')
-          el.classList.add('preview-image--' + (i + 1))
+          var container = document.createElement('div')
+          container.classList.add('image-container')
+          container.dataset.index = i + 1
+          container.classList.add('preview-image')
+          container.classList.add('preview-image--' + (i + 1))
           if (count === 2 && i === 0) {
-            el.classList.add('preview-image--current')
+            container.classList.add('preview-image--current')
           }
-          return el
+          var image = document.createElement('img')
+          image.src = './assets/image/zine/' + folder + '/' + (i + 1) + '.jpg'
+          container.appendChild(image)
+          return container
         })
     }
   </script>
