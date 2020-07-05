@@ -26,10 +26,25 @@ function showBottomShadow() {
 
 detectScrollToBottom()
 
-var touchPreventTimeout;
+    ; (function () {
+        document.body.addEventListener('contextmenu', function (e) {
+            e.preventDefault()
+        })
 
-; (function () {
-    document.body.addEventListener('contextmenu', function (e) {
-        e.preventDefault()
-    })
-})()
+        var duration = 0.5 * 1000
+
+        window.addEventListener('DOMContentLoaded', function () {
+            document.body.style.transitionDuration = duration + 'ms'
+            document.body.classList.add('body-show')
+        })
+        var links = document.getElementsByTagName('a')
+        Array.from(links).forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault()
+                document.body.classList.remove('body-show')
+                setTimeout(function () {
+                    location.href = link.href
+                }, duration)
+            })
+        })
+    })()
