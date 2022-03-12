@@ -114,10 +114,15 @@
     </ul>
 
     <footer style="text-align: center; margin-bottom: 1.5em;">
-      <p style="margin: 0 0;">Copyright © 2020-2021 Dave Shen. All Rights Reserved.</p>
+      <p style="margin: 0 0;">Copyright © 2020-<span id="copyright-valid"></span> Dave Shen. All Rights Reserved.</p>
       <p style="margin: 0 0;">Do not download any image on this site.</p>
     </footer>
   </main>
+  <script>
+    var valid = document.getElementById('copyright-valid');
+    var year = new Date().getFullYear();
+    valid.innerText = year;
+  </script>
   <script src="./assets/js/index.js"></script>
 </body>
 
